@@ -6,7 +6,7 @@
 
 ## Request Sample
 - `/AddCartItem`
-*All params must be on query params liske: /AddCartItem?order_id=56416&quantity=1*
+*All params must be on query params like:* `/AddCartItem?order_id=56416&quantity=1`
 
 ```javascript
   {
