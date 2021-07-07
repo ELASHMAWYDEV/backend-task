@@ -9,7 +9,7 @@ const spanInterval = new Map(); //To store all timeout functions
 const TIME_SPAN = 10 * 1 * 1000; //ms
 
 router.get("/", validation, async (req, res) => {
-	try {
+  try {
 		//Validation
 		const result = validationResult(req).formatWith(({ msg, param }) => ({ param, message: msg }));
 		if (!result.isEmpty()) return res.status(500).json({ status: false, errors: result.array() });
