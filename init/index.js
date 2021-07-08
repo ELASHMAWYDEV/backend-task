@@ -1,6 +1,5 @@
 require("dotenv/config");
 const mongoose = require("mongoose");
-const storage = require("node-persist");
 const { DB_URI } = process.env;
 
 try {
@@ -21,20 +20,11 @@ try {
 	db.once("open", () => console.log("connected to DB"));
 	db.once("close", () => console.log("Connection to DB closed..."));
 
-	/**************************************************/
-	//Initialize node-persist
-	(async () => {
-		await storage.init({
-			dir: "temp/persist/orders",
-			stringify: JSON.stringify,
-			parse: JSON.parse,
-			encoding: "utf8",
-			logging: false,
-			ttl: 864000 * 1000,
-			expiredInterval: 10 * 60 * 1000, //Delete cache every 10 mins
-			forgiveParseErrors: false,
-		});
-	})();
+  /**************************************************/
+  
+  require("./ordersTimeout");
+
+
 } catch (e) {
 	console.log(`Error in init: ${e.message}\n`, e);
 }

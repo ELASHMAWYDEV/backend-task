@@ -13,6 +13,8 @@ try {
 	//Initialization
 	require("./init");
 
+
+
 	//Routes
 	app.use("/", require("./routes/index"));
 

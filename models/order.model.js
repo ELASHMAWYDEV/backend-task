@@ -10,6 +10,7 @@ const payoutSchema = new mongoose.Schema({
 		required: true,
 	},
 });
+
 const cartItemSchema = new mongoose.Schema({
 	name: {
 		type: String,
